@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load model and scaler
-model = joblib.load("diabetes_random_forest_model.pkl")
+model = joblib.load("diabetes_prediction_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
 st.set_page_config(page_title="Diabetes Prediction", page_icon="🩺")
