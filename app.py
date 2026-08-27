@@ -57,19 +57,17 @@ input_data = {
 input_df = pd.DataFrame([input_data])
 
 # -----------------------------
-# Scale Numerical Features
+# Scale Input
 # -----------------------------
-num_cols = ["age", "bmi", "HbA1c_level", "blood_glucose_level"]
-
-input_df[num_cols] = scaler.transform(input_df[num_cols])
+input_scaled = scaler.transform(input_df)
 
 # -----------------------------
 # Prediction
 # -----------------------------
 if st.button("Predict Diabetes"):
 
-    prediction = model.predict(input_df)[0]
-    probability = model.predict_proba(input_df)[0]
+    prediction = model.predict(input_scaled)[0]
+probability = model.predict_proba(input_scaled)[0]
 
     st.subheader("Prediction Result")
 
